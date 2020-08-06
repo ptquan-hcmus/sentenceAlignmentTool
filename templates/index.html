@@ -2,26 +2,32 @@
 {% block table %}
 <table>
   <tr>
-    <th style="width:50%">
+    <th style="width:48%">
       <h4 class="header" style="width:100%">English</h4>
     </th>
-    <th style="width:50%">
+    <th style="width: 4%">
+      <div></div>
+    </th>
+    <th style="width:48%">
       <h4 class="header" style="width:100%">Vietnamese</h4>
     </th>
   </tr>
   <tbody>
   {% for value in data %}
   <tr>
-    <td class="column_1" style="width:50%">
+    <td class="column_1">
       <div class="row draggable_1" draggable="true" style="width: 100%;">
         <textarea class="txt col-sm-11"  spellcheck="false">{{value[0]}}</textarea>
-        <a class="btn btn-dark col-sm-1" onclick="false" role="button"><p>      </p></a   >
+        <a class="btn btn-primary col-sm-1" onclick="false" role="button"><p>      </p></a   >
       </div>
     </td>
-    <td class="column_2 "  style="width:50%">
+    <td>
+      <input class="box_check" type = "checkbox" style="padding: 0px;">
+    </td>
+    <td class="column_2 ">
       {% for v in value[1] %}
       <div class="row draggable_2" draggable="true" style="width: 100%;">
-        <a class="btn btn-dark col-sm-1" onclick="false" role="button"><p>      </p></a>
+        <a class="btn btn-danger col-sm-1" onclick="false" role="button"><p>      </p></a>
         <textarea class="txt col-sm-11"  spellcheck="false">{{v}}</textarea>
       </div>
       {% endfor %}

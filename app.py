@@ -43,7 +43,7 @@ def hello():
             def pre_translate(EL, VN):
                data = [[EL[i], []] for i in range(len(EL))]
                EL_len, VN_len = len(EL), len(VN)
-               translator = Translator(service_urls=['translate.google.com'])
+               translator = Translator(service_urls=['translate.google.com', 'translate.google.co.kr'])
                start = time()
                def translate(sentence):
                   translation = translator.translate(sentence, src='en', dest='vi')
@@ -110,10 +110,10 @@ def hello():
                   data[EL_len - 1][1].append(VN[-1])
                   check_list[VN_len - 1] = EL_len - 1
 
-               for i in range(int(VN_len)):
+               for i in range(int(VN_len/2) + 1):
                   if check_list[i] == -1:
                      for j in range(i-1, -1, -1):
-                        if check_list[j] != -1 and check_list[j] < EL_len - 1:
+                        if check_list[j] != -1:
                            data[check_list[j] + 1][1].append(VN[i])
                            check_list[i] = check_list[j] + 1
                            break

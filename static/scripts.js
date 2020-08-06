@@ -84,19 +84,31 @@ $('#save-link').click(function () {
   var retContent = [];
   var retString = '';
   $('tbody tr').each(function (idx, elem) {
-    var elemText = [];
+    var elemText = '';
     var i = 0
     $(elem).children('td').each(function (childIdx, childElem) {
       if (i == 0) {
-        elemText.push(`(en)${$(childElem).text().trim().replace(/(\n)/gm, "").replace("            ", " ")}`);
-        i = 1
-      } else {
-        elemText.push(`(vi)${$(childElem).text().trim().replace(/(\n)/gm, "").replace("            ", " ")}`);
+        text = ''
+        $(childElem).find('.txt').each(function(Idx, childText){
+          text += $(childText).val() + '\n'
+        });
+        elemText += '(en)' + text;
+        i = 1;
+      } else if (i == 1){
+        if (!$(childElem).find('.box_check').is(":checked")){
+          elemText = '+' + elemText
+        }
+        i = 2
+      } else if (i == 2){
+        text = ''
+        $(childElem).find('.txt').each(function(Idx, childText){
+          text += $(childText).val() + '\n'
+        });
+        elemText += '(vi)' + text;
         i = 0
       }
     });
-    // .replace(/(\r\n|\n|\r)/gm, "")
-    retContent.push(`${elemText.join("\n")}`);
+    retContent.push(`${elemText}`);
   });
   retString = retContent.join("\n\n")
   var file = new Blob([retString], { type: 'text/plain' });
@@ -104,6 +116,15 @@ $('#save-link').click(function () {
   btn.attr("href", URL.createObjectURL(file));
   btn.prop("download", "data.txt");
 })
+
+$(document).ready(function() {
+  $('textarea').on('keyup keydown', function() {
+    $(this).height(0);
+    $(this).height(this.scrollHeight);
+  });
+});
+
+
 
 // $.fn.enterKey = function (fnc) {
 //   return this.each(function () {

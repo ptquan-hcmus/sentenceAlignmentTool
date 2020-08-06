@@ -19,31 +19,35 @@ table th {
 }
 
 table tbody tr:nth-of-type(even) {
-  background-color: #dddddd;
+  background-color: #ffffff;
 }
 
 table tbody tr:nth-of-type(odd) {
   background-color: #ffffff;
 }
 
+table tbody tr {
+  border: 3px solid black;
+}
+
 table tbody tr:last-of-type {
-  border-bottom: 5px solid #008979;
+  border-bottom: 20px solid #008979;
 }
 
 
 .column_1, .column_2 {
-  min-height: 30px;
+  min-height: 50px;
   padding: 10px;
 }
 
 .draggable_1, .draggable_2 {
-  min-height: fit-content;
-  cursor: text;
   padding: 2px;
 }
 
 .txt {
-  border-radius: 100px;
+  border-radius: 10px;
+  resize: vertical;
+  overflow: hidden;
 }
 
 .draggable_1.dragging_1, .draggable_2.dragging_2 {
