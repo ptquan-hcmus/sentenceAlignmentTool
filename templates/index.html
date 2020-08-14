@@ -13,26 +13,35 @@
     </th>
   </tr>
   <tbody>
-  {% for value in data %}
-  <tr>
-    <td class="column_1">
-      <div class="row draggable_1" draggable="true" style="width: 100%;">
-        <textarea class="txt col-sm-11"  spellcheck="false">{{value[0]}}</textarea>
-        <a class="btn btn-primary col-sm-1" onclick="false" role="button"><p>      </p></a   >
-      </div>
-    </td>
-    <td>
-      <input class="box_check" type = "checkbox" style="padding: 0px;">
-    </td>
-    <td class="column_2 ">
-      {% for v in value[1] %}
-      <div class="row draggable_2" draggable="true" style="width: 100%;">
-        <a class="btn btn-danger col-sm-1" onclick="false" role="button"><p>      </p></a>
-        <textarea class="txt col-sm-11"  spellcheck="false">{{v}}</textarea>
-      </div>
-      {% endfor %}
-    </td>
-  </tr>
+  {% for section in data %}
+    {% set i = loop.index0 %}
+    {% for value in section %}
+      <tr>
+        <td class="column_1">
+          {% for v in value[0] %}
+          <div class="row draggable_1" draggable="true" style="width: 100%;">
+            <textarea class="txt col-sm-11"  spellcheck="false">{{v}}</textarea>
+            <a class="btn btn-primary col-sm-1" onclick="false" role="button"><p>      </p></a   >
+          </div>
+          {% endfor %}
+        </td>
+        <td>
+          {% if check_box[i][loop.index0] == 0 %}
+          <input class="box_check" type = "checkbox" style="padding: 0px;">
+          {% else %}
+          <input class="box_check" type = "checkbox" style="padding: 0px;" checked>
+          {% endif %}
+        </td>
+        <td class="column_2 ">
+          {% for v in value[1] %}
+          <div class="row draggable_2" draggable="true" style="width: 100%;">
+            <a class="btn btn-success col-sm-1" onclick="false" role="button"><p>      </p></a>
+            <textarea class="txt col-sm-11"  spellcheck="false">{{v}}</textarea>
+          </div>
+          {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
   {% endfor %}
   </tbody>
 </table>
