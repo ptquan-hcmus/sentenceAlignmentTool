@@ -12,7 +12,7 @@ table {
 }
 
 table th {
-  background-color: #008979;
+  background-color: #ca2acf;
   text-align: left;
   font-weight: bolder;
   color: #ffffff;
@@ -27,11 +27,11 @@ table tbody tr:nth-of-type(odd) {
 }
 
 table tbody tr {
-  border: 3px solid black;
+  border-bottom: 2px solid #008979;
 }
 
 table tbody tr:last-of-type {
-  border-bottom: 20px solid #008979;
+  border-bottom: 20px solid #ca2acf;
 }
 
 

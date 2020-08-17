@@ -123,39 +123,3 @@ $(document).ready(function() {
     $(this).height(this.scrollHeight);
   });
 });
-
-
-
-// $.fn.enterKey = function (fnc) {
-//   return this.each(function () {
-//       $(this).keypress(function (ev) {
-//           var keycode = (ev.keyCode ? ev.keyCode : ev.which);
-//           if (keycode == '13') {
-//               fnc.call(this);
-//           }
-//       })
-//   })
-// }
-
-// $('.txt').enterKey(e => {
-//       var pos= $(e).prop('selectionStart');
-//       var s=$(e).html()
-//       console.log(pos,s)
-// });
-
-
-
-// $.fn.getCursorPosition = function () {
-//   var el = $(this).get(0);
-//   var pos = 0;
-//   if ('selectionStart' in el) {
-//     pos = el.selectionStart;
-//   } else if ('selection' in document) {
-//     el.focus();
-//     var Sel = document.selection.createRange();
-//     var SelLength = document.selection.createRange().text.length;
-//     Sel.moveStart('character', -el.value.length);
-//     pos = Sel.text.length - SelLength;
-//   }
-//   return pos;
-// }
