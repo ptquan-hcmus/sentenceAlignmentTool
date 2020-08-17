@@ -24,6 +24,6 @@ A semi-automatic English-Vietnamese sentence alignment tool.
     INSERT_NEW_LINE
     +(en)..."
     The cycle continues. Notice the "+" at the beginning, it represents for unchecked box or unfinished work. If it's removed then that pair is clean data.
-- Choose "Gửi", if you have 2 files choosen then it might take a while (about 10s) to translate so be patient. On the other hand, loading 1 file is so much faster, literally 1s. That's why I recommend you to save the file after the first time you load it and work with that file.
-- Begin or continue your work. Check the box if you finish a pair
+- Choose "Gửi", if you have 2 files chosen then it might take a while (about 10s) to translate so be patient. On the other hand, loading 1 file is so much faster, literally 1s. That's why I recommend you to save the file after the first time you load it and work with that file.
+- Begin or continue your works. Check the box if you finish a pair
 - Finally, press download if you need to save your works
